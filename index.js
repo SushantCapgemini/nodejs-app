@@ -34,10 +34,7 @@ app.post("/addUser", async (req, res) => {
 
 app.get("/getUsers", async (req, res) => {
   let collection = await db.collection("users");
-  let results = await collection
-    .find({})
-
-    .toArray();
+  let results = await collection.find({}).toArray();
   res.send(results).status(200);
 });
 
